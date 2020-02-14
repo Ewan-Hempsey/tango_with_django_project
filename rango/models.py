@@ -1,8 +1,5 @@
 from django.db import models
-<<<<<<< HEAD
 from django.contrib.auth.models import User
-=======
->>>>>>> 91921ea48117962ec93f2480baf066ec473390cb
 from django.template.defaultfilters import slugify
 # Create your models here.
 from django.db import models
@@ -30,5 +27,6 @@ class Page(models.Model):
 class UserProfile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	website = models.URLField(blank=True)
+	picture = models.ImageField(upload_to='profile_images', blank=True)
 	def __str__(self):
-	return self.user.username
+		return self.user.username
