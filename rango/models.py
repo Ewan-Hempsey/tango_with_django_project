@@ -1,5 +1,8 @@
 from django.db import models
+<<<<<<< HEAD
 from django.contrib.auth.models import User
+=======
+>>>>>>> 91921ea48117962ec93f2480baf066ec473390cb
 from django.template.defaultfilters import slugify
 # Create your models here.
 from django.db import models

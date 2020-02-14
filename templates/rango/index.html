@@ -11,6 +11,10 @@ Homepage
 			</div>
 			<div>
 			{% if categories %}
+<<<<<<< HEAD
+=======
+				<h2>Most Liked Categories</h2>
+>>>>>>> 91921ea48117962ec93f2480baf066ec473390cb
 				<ul>
 				{% for category in categories %}
 					<li>
@@ -22,9 +26,29 @@ Homepage
 				<strong>There are no categories present.</strong>
 			{% endif %}
 			</div>
+<<<<<<< HEAD
 
 			<div>
 				<a href="{% url 'rango:about' %}">About</a><br />
+=======
+			
+			<div>
+			{% if pages %}
+				<h2>Most Viewed Pages</h2>
+				<ul>
+					{% for page in pages %}
+					<li><a href="{{ page.url }}">{{ page.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% else %}
+				<strong>There are no pages present.</strong><br />
+			{% endif %}
+			</div>
+
+
+			<div>
+				<a href="/rango/about/">About</a><br />
+>>>>>>> 91921ea48117962ec93f2480baf066ec473390cb
 				<img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" /> 
 				
 			</div>

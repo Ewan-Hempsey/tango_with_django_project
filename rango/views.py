@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rango.models import Category
 from rango.models import Page
+<<<<<<< HEAD
 from rango.forms import CategoryForm
 from django.shortcuts import redirect
 from django.urls import reverse
+=======
+>>>>>>> 91921ea48117962ec93f2480baf066ec473390cb
 def index(request):
 	category_list = Category.objects.order_by('-likes')[:5]
 	page_list = Page.objects.order_by('-views')[:5]
@@ -18,7 +21,11 @@ def about(request):
 	# Return a rendered response to send to the client.
 	# We make use of the shortcut function to make our lives easier.
 	# Note that the first parameter is the template we wish to use.
+<<<<<<< HEAD
 	return render(request, 'rango/about.html',context=context_dict)
+=======
+	return render(request, 'rango/about.html',context= context_dict)
+>>>>>>> 91921ea48117962ec93f2480baf066ec473390cb
 	
 def show_category(request, category_name_slug):
 	context_dict={}
@@ -30,6 +37,7 @@ def show_category(request, category_name_slug):
 	except Category.DoesNotExist:
 		context_dict['category']=None
 		context_dict['pages'] = None
+<<<<<<< HEAD
 	return render(request, 'rango/category.html', context = context_dict)
 	
 def add_category(request):
@@ -67,3 +75,6 @@ def add_page(request, category_name_slug):
 	else:
 		print(form.errors)
 	return render(request, 'rango/add_page.html', context={'form': form, 'category': category})
+=======
+	return render(request, 'rango/category.html', context = context_dict)
+>>>>>>> 91921ea48117962ec93f2480baf066ec473390cb
